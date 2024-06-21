@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2024 at 05:39 PM
+-- Generation Time: Jun 21, 2024 at 05:56 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,13 +35,6 @@ CREATE TABLE `purchases` (
   `type` varchar(9) DEFAULT NULL,
   `time_of_purchase` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `purchases`
---
-
-INSERT INTO `purchases` (`username`, `from_to`, `departure_arrival`, `price`, `type`, `time_of_purchase`) VALUES
-('RAIYAN', 'DHAKA-CHITTAGONG', '11:00 PM - 06:00 AM', 700.00, 'Economy', '2024-06-21 21:38:03');
 
 -- --------------------------------------------------------
 
@@ -90,8 +83,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `pass`, `cpass`, `phone`) VALUES
-('ADMIN', 'ADMIN', 'ADMIN', 111111111),
-('RAIYAN', '12', '12', 1300775307);
+('ADMIN', 'ADMIN', 'ADMIN', 111111111);
 
 --
 -- Indexes for dumped tables
