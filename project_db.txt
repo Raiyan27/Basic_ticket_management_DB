@@ -1,0 +1,28 @@
+create database project_db;
+
+use project_db;
+
+create table users (username varchar(100), 
+                    pass varchar(20) NOT NULL, 
+                    cpass varchar(20), 
+                    phone int(15) NOT NULL,
+                    PRIMARY KEY (username)
+);
+
+CREATE TABLE ticket_info (from_to varchar(100),
+                         departure_arrival varchar(100),
+                         price DECIMAL(7,2) NOT NULL,
+                         type varchar(9),
+                         PRIMARY KEY (from_to,departure_arrival, type)
+);
+
+CREATE TABLE purchases (username varchar(100),
+    			from_to varchar(100),
+                        departure_arrival varchar(100),
+                        price DECIMAL(7,2),
+                        type varchar(9),
+			time_of_purchase DATETIME NOT NULL,
+                        PRIMARY KEY (username,time_of_purchase),
+                        FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE,
+                        FOREIGN KEY (from_to,departure_arrival, type) REFERENCES ticket_info (from_to,departure_arrival, type) ON DELETE CASCADE
+);
